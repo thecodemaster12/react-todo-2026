@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "name": "tds-admin",
+      "email": "thecodemaster26@gmail.com",
+      "password": "asdfdfdf",
+      "id": "5OygdmgCpY4"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

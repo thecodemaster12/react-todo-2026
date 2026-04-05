@@ -14,3 +14,15 @@ export async function registerUser(data) {
     else
         return res.json()
 }
+
+export async function loginUser({email, password}) {
+    const res = await fetch(`${BASE_URL}/user?email=${email}&password=${password}`)
+
+    const data = await res.json();
+
+    if (data.length === 0) {
+        throw new Error("Invalid email or password");
+    }
+
+    return data[0]
+}

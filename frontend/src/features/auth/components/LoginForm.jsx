@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LoginForm = () => {
+const LoginForm = ({ onSubmit }) => {
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -31,7 +31,7 @@ const LoginForm = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const validationErrors = validate();
@@ -43,7 +43,17 @@ const LoginForm = () => {
 
     setErrors({});
 
-    alert("Good");
+    try {
+      await onSubmit(form);
+      setForm({
+        email: "",
+        password: "",
+      });
+    } catch (error) {
+      setErrors({
+        general: error.message,
+      });
+    }
   };
 
   return (
@@ -71,6 +81,9 @@ const LoginForm = () => {
         />
         {errors.password && (
           <p className="text-red-500 text-sm">{errors.password}</p>
+        )}
+        {errors.general && (
+          <p className="text-red-500 text-sm">{errors.general}</p>
         )}
       </div>
 

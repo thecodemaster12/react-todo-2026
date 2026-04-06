@@ -16,7 +16,7 @@ export async function registerUser(data) {
 }
 
 export async function loginUser({email, password}) {
-    const res = await fetch(`${BASE_URL}/user?email=${email}&password=${password}`)
+    const res = await fetch(`${BASE_URL}/users?email=${email}&password=${password}`)
 
     const data = await res.json();
 

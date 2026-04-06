@@ -1,22 +1,21 @@
 import LoginForm from "../components/LoginForm";
 import { loginUser } from "../api/authApi";
+import { useNavigate } from "react-router-dom";
 
 
 const LoginPage = () => {
 
   const handleSubmit = async (data) => {
-  try {
-    const user = await loginUser(data);
+    try {
+      const user = await loginUser(data);
 
-    // store user (simple session)
-    localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("user", JSON.stringify(user));
 
-    alert(`Welcome ${user.name}`);
-
-  } catch (error) {
-    throw error; // 🔥 important (so form can catch)
-  }
-};
+      navigate("/"); // 🔥 redirect to dashboard
+    } catch (error) {
+      throw error;
+    }
+  };
 
   return (
     <div className="bg-indigo-200 min-h-screen flex justify-center items-center">

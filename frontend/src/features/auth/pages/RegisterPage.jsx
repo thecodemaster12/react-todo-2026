@@ -2,8 +2,11 @@ import React from 'react'
 import RegisterForm from '../components/RegisterForm'
 import { registerUser } from '../api/authApi'
 import { useNavigate } from 'react-router-dom'
+import useTitle from '@/hooks/useTitle'
 
 const RegisterPage = () => {
+
+  useTitle("Register")
 
   const navigate = useNavigate()
 

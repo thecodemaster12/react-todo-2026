@@ -1,9 +1,12 @@
 import LoginForm from "../components/LoginForm";
 import { loginUser } from "../api/authApi";
 import { useNavigate } from "react-router-dom";
+import useTitle from "@/hooks/useTitle";
 
 
 const LoginPage = () => {
+
+  useTitle("Login")
 
   const navigate = useNavigate()
 

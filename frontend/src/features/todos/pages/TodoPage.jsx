@@ -2,8 +2,11 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { logout } from '@/utils/auth'
 import { getUser } from '@/utils/auth'
+import useTitle from '@/hooks/useTitle'
 
 const TodoPage = () => {
+
+  useTitle("Dashboard")
 
   const navigate = useNavigate()
 

@@ -5,6 +5,18 @@
       "email": "thecodemaster26@gmail.com",
       "password": "123456",
       "id": "AHyv-AGAinI"
+    },
+    {
+      "name": "Saifur",
+      "email": "master@gmail.com",
+      "password": "123456",
+      "id": "6WvumhxjN4o"
+    },
+    {
+      "name": "newUser",
+      "email": "newhr@gmail.com",
+      "password": "aaaaaaaa",
+      "id": "K6VX7tk9A2I"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

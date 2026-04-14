@@ -62,15 +62,14 @@ const RegisterForm = ({ onSubmit }) => {
       });
     } catch (err) {
       setErrors({
-        email: err.message
-      })
+        email: err.message,
+      });
       console.error(err);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-
       {/* Name */}
       <div>
         <input
@@ -81,9 +80,7 @@ const RegisterForm = ({ onSubmit }) => {
           placeholder="Name"
           onChange={handleChange}
         />
-        {errors.name && (
-          <p className="text-red-500 text-sm">{errors.name}</p>
-        )}
+        {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
       </div>
 
       {/* Email */}
@@ -96,9 +93,7 @@ const RegisterForm = ({ onSubmit }) => {
           placeholder="Email"
           onChange={handleChange}
         />
-        {errors.email && (
-          <p className="text-red-500 text-sm">{errors.email}</p>
-        )}
+        {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
       </div>
 
       {/* Password */}
@@ -117,12 +112,14 @@ const RegisterForm = ({ onSubmit }) => {
       </div>
 
       <div className="text-center">
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2"
-        >
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2">
           Register
         </button>
+      </div>
+      <div className="text-center">
+        <a className="text-blue-500 italic" href="/login">
+          Login ?
+        </a>
       </div>
     </form>
   );

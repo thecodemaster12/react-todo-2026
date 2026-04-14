@@ -1,8 +1,11 @@
 import React from 'react'
 import RegisterForm from '../components/RegisterForm'
 import { registerUser } from '../api/authApi'
+import { useNavigate } from 'react-router-dom'
 
 const RegisterPage = () => {
+
+  const navigate = useNavigate()
 
 const handleRegisterUser = async (data) => {
   // check duplicate
@@ -16,6 +19,8 @@ const handleRegisterUser = async (data) => {
   }
 
   const user = await registerUser(data);
+  localStorage.setItem("user", JSON.stringify(user));
+  navigate("/")
   return user;
 };
 

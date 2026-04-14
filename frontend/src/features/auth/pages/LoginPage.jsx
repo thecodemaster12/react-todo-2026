@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
 
+  const navigate = useNavigate()
+
   const handleSubmit = async (data) => {
     try {
       const user = await loginUser(data);
